@@ -1,29 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
     public float speed;
-    public GameObject deathFloor;
+    public GameObject platform;
+    
+    [Header("HealthStuffs")]
+    public int healthMax = 3;
+    public int healthCurrent;
+    Life health;
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called on object initialization
+    void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>(); // makes rigidbody work
         rigidbody2d.AddForce(new Vector2(0, -speed));
+
+        //Gets health scipt, Sets max health to healthMax, Sets current health to max health
+        health = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Life>();
+        health.SetMaxHealth(healthMax);
+        healthCurrent = healthMax;
+        
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        //Reset Brick Break with R
+        if (Input.GetKeyDown (KeyCode.R) == true)
+        {
+            Reset();
+        }
+
+        //When life hits 0 restart level
+        if (healthCurrent <= 0) Reset();
+    }
+
+    //Checks if something collides with the ball
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Resets positions and make you loose 1 life
         if (collision.gameObject.tag == "DeathFloor")
         {
-            //loose life
             transform.position = new Vector2(0, 0);
-            //change speed or teleport platform under
+            platform.transform.position = new Vector2(transform.position.x, -7);
+            healthCurrent--;
+            health.SetHealth(healthCurrent);
         }
     }
-    //Loose a life if ball sticks
+
+    //Resets the Brick Break mini game. Could change to reset the entire scene
+    private void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - DeathFloor
+  - Brick
+  - Light
+  - HealthBar
   layers:
   - Default
   - TransparentFX
