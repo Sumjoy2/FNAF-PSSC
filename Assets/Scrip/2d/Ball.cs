@@ -6,7 +6,6 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
-    public float speed;
     public GameObject platform;
     
     [Header("HealthStuffs")]
@@ -14,11 +13,16 @@ public class Ball : MonoBehaviour
     public int healthCurrent;
     Life health;
 
+    [Header("SpeedVariables")]
+    public float speed;
+    public float initialX;
+
     // Awake is called on object initialization
     void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>(); // makes rigidbody work
-        rigidbody2d.AddForce(new Vector2(0, -speed));
+        //Sets initial movement down and with a random X
+        rigidbody2d.AddForce(new Vector2(Random.Range(-initialX,initialX), -speed)); 
 
         //Gets health scipt, Sets max health to healthMax, Sets current health to max health
         health = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Life>();
@@ -50,6 +54,14 @@ public class Ball : MonoBehaviour
             platform.transform.position = new Vector2(transform.position.x, -7);
             healthCurrent--;
             health.SetHealth(healthCurrent);
+        }
+        else if (collision.gameObject.tag == "Brick")
+        {
+            collision.gameObject.SetActive(false);
+        }
+        else
+        {
+            rigidbody2d.AddForce(new Vector2(Random.Range(-initialX, initialX), 0));
         }
     }
 
