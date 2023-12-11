@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement3D : MonoBehaviour
 {
     Camera mainCamera;
+    public bool atGenerator = false;
 
     private void Start()
     {
@@ -25,12 +26,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void CameraDesk()
     {
+        atGenerator = false;
         mainCamera.transform.position = new Vector3(38.5f, 3.55f, 138);
         mainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public void Generator()
     {
+        atGenerator = true;
         mainCamera.transform.position = new Vector3(30, 1.55f, 205);
         mainCamera.transform.rotation = Quaternion.Euler(35, 0, 0);
     }
