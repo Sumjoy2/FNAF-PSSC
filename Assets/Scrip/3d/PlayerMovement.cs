@@ -28,4 +28,10 @@ public class PlayerMovement : MonoBehaviour
         mainCamera.transform.position = new Vector3(38.5f, 3.55f, 138);
         mainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
+
+    public void Generator()
+    {
+        mainCamera.transform.position = new Vector3(30, 1.55f, 205);
+        mainCamera.transform.rotation = Quaternion.Euler(35, 0, 0);
+    }
 }
