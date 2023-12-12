@@ -6,7 +6,7 @@ public class capfps : MonoBehaviour
 {
     public int targetFPS = 60;
    
-    void start()
+    void Awake()
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = targetFPS;
