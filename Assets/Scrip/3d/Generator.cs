@@ -7,6 +7,7 @@ public class Generator : MonoBehaviour
     private int generatorAmount;
     public int generatorMax = 1000;
     public bool refueling = false;
+    public GameObject cameras;
     public Life genAmountSlider;
 
     // Start is called before the first frame update
@@ -27,12 +28,18 @@ public class Generator : MonoBehaviour
         {
             WindUp();
         }
-        //caps generator amount at generator max
+        //caps generator amount at generator max, 
         if (generatorAmount >= generatorMax)
         {
             generatorAmount = generatorMax;
+            cameras.SetActive(true);
         }
-
+        //turns cameras off when generator hits 0
+        if (generatorAmount <= 0)
+        {
+            cameras.SetActive(false);
+            generatorAmount = 0;
+        }
     }
     //adds 5 per whatever to generator amount
     public void WindUp()

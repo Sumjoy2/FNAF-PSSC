@@ -4,25 +4,41 @@ using UnityEngine;
 
 public class enmymoving : MonoBehaviour
 {
-    //int a = 25;
-    int ticky;
-   // int x;
-    int y;
+    public int level;
+    public int levelMax;
+    public int night;
+    int rand;
+    public float timer;
+
     // Start is called before the first frame update
     void Start()
     {
-     
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        ticky++;
-        if (ticky==25)
+        StartCoroutine(Roll(timer - night));
+        if (rand > level)
         {
-         y = Random.Range(0,20);
-         Debug.Log(y);
-         ticky = 0;
+            return;
         }
+        else if (rand <= level)
+        {
+            MoveForward();
+        }
+    }
+
+    public void MoveForward()
+    {
+        //some code here
+        Debug.Log("moved, Random Number: " +  rand);
+    }
+
+    IEnumerator Roll(float time)
+    {
+        yield return new WaitForSeconds(time);
+        rand = Random.Range(0, levelMax);
     }
 }
