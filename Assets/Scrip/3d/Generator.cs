@@ -23,7 +23,7 @@ public class Generator : MonoBehaviour
         generatorAmount--;
         genAmountSlider.SetHealth(generatorAmount);
         //when button held add 5 to generator amount per fixed update
-        if (refueling )
+        while (refueling )
         {
             WindUp();
         }
