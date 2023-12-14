@@ -13,13 +13,12 @@ public class enmymoving : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(Roll(timer - night));
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        StartCoroutine(Roll(timer - night));
         if (rand > level)
         {
             return;
@@ -27,13 +26,16 @@ public class enmymoving : MonoBehaviour
         else if (rand <= level)
         {
             MoveForward();
+            rand = 21;
+            
         }
     }
 
     public void MoveForward()
     {
         //some code here
-        Debug.Log("moved, Random Number: " +  rand);
+        transform.position += new Vector3 (rand, 0 ,0);
+        StartCoroutine(Roll(timer - night));
     }
 
     IEnumerator Roll(float time)

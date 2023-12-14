@@ -20,7 +20,8 @@ public class PlayerMovement3D : MonoBehaviour
 
     public void RightDoor()
     {
-        mainCamera.transform.position = new Vector3(60, 1.55f, 175);
+        mainCamera.transform.position = new Vector3(51, 1.55f, 180);
+        mainCamera.transform.rotation = Quaternion.Euler(0, 35, -7);
     }
 
     public void CameraDesk()
