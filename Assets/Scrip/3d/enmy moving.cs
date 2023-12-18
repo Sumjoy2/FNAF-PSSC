@@ -33,6 +33,13 @@ public class enmymoving : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Door")
+        {
+            transform.position = new Vector3(17, 1, 65);
+        }
+    }
     IEnumerator MoveForward()
     {
         //some code here
