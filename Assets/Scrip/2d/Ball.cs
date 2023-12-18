@@ -8,9 +8,11 @@ public class Ball : MonoBehaviour
     Rigidbody2D rigidbody2d;
     public GameObject platform;
     
+    
     [Header("HealthStuffs")]
     public int healthMax = 3;
     public int healthCurrent;
+    public int score;
     Life health;
 
     [Header("SpeedVariables")]
@@ -47,6 +49,11 @@ public class Ball : MonoBehaviour
         {
             LoadScene("ActualGame");
         }
+        
+        if (score == 82)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     //Checks if something collides with the ball
@@ -63,6 +70,8 @@ public class Ball : MonoBehaviour
         else if (collision.gameObject.tag == "Brick")
         {
             collision.gameObject.SetActive(false);
+            score++;
+            Debug.Log(score);
         }
         else
         {
