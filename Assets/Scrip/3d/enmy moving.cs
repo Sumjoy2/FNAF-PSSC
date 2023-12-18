@@ -45,7 +45,7 @@ public class enmymoving : MonoBehaviour
     IEnumerator Roll(float time)
     {
         navMeshAgent.isStopped = true;
-        navMeshAgent.ResetPath();
+        navMeshAgent.destination = transform.position;
         yield return new WaitForSeconds(time);
         rand = Random.Range(0, levelMax);
     }
