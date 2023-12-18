@@ -8,6 +8,8 @@ TagManager:
   - Brick
   - Light
   - HealthBar
+  - Enemy
+  - Door
   layers:
   - Default
   - TransparentFX
