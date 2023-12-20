@@ -7,8 +7,9 @@ public class Ball : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
     public GameObject platform;
-    
-    
+    [SerializeField] GameObject pssc;
+   // [SerializeField] GameObject digapen;
+
     [Header("HealthStuffs")]
     public int healthMax = 3;
     public int healthCurrent;
@@ -49,10 +50,19 @@ public class Ball : MonoBehaviour
         {
             LoadScene("ActualGame");
         }
-        
-        if (score == 82)
+        if (Input.GetKeyDown(KeyCode.A) == true)
         {
-            SceneManager.LoadScene(1);
+            score += 43;
+        }
+
+        if (score >= 43)
+        {
+            pssc.SetActive(true);
+       
+        }
+        if (score >= 125)
+        {
+            LoadScene("ActualGame");
         }
     }
 
