@@ -20,11 +20,11 @@ public class DOOOOOOR : MonoBehaviour
         {
             transform.position = Downper.position;
         }
+
         if (isActive == false) 
         {
             transform.position = Upper.position;
         }
-        //53.36, 2.34, 184.07
     }
     public void IsOpen()
     {
