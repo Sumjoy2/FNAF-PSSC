@@ -7003,7 +7003,7 @@ Transform:
   m_GameObject: {fileID: 301519143}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.5, y: 5.48, z: 138}
+  m_LocalPosition: {x: 38.5, y: 3.55, z: 138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31698,12 +31698,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144039190}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c7f9ef70e018064784472bac1b79ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatorMax: 1000
+  generatorMax: 6000
   refueling: 0
   cameras: {fileID: 164785686}
   genAmountSlider: {fileID: 961333262}
@@ -44934,13 +44934,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665947686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14997555, y: 0.0018023233, z: 0.00015635719, w: 0.98868805}
-  m_LocalPosition: {x: 38.41, y: 4.418, z: 144.917}
-  m_LocalScale: {x: 3.4875412, y: 1.6805207, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 38.41, y: 3.54, z: 134.12}
+  m_LocalScale: {x: 6, y: 3, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 164785687}
-  m_LocalEulerAnglesHint: {x: 17.251, y: 0.217, z: 0.051}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1674441495
 PrefabInstance:
   m_ObjectHideFlags: 0
