@@ -10100,6 +10100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 1741660793}
+  pssc: {fileID: 0}
   healthMax: 3
   healthCurrent: 0
   score: 0
@@ -12010,7 +12011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1387299511}
   m_Layer: 0
-  m_Name: 'Brickws '
+  m_Name: Brickws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14208,11 +14209,11 @@ GameObject:
   - component: {fileID: 1625980256}
   m_Layer: 0
   m_Name: PSSC
-  m_TagString: Untagged
+  m_TagString: NewBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1625980256
 Transform:
   m_ObjectHideFlags: 0

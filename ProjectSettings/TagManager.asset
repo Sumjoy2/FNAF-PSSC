@@ -10,6 +10,8 @@ TagManager:
   - HealthBar
   - Enemy
   - Door
+  - NewBrick
+  - CamearLocals
   layers:
   - Default
   - TransparentFX
