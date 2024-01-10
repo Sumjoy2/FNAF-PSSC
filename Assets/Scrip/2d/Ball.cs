@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Ball : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
     public GameObject platform;
     [SerializeField] GameObject pssc;
-   // [SerializeField] GameObject digapen;
 
     [Header("HealthStuffs")]
     public int healthMax = 3;
@@ -23,6 +23,8 @@ public class Ball : MonoBehaviour
     // Awake is called on object initialization
     void Awake()
     {
+        pssc = GameObject.Find("PSSC");
+        pssc.SetActive(false);
         rigidbody2d = GetComponent<Rigidbody2D>(); // makes rigidbody work
         //Sets initial movement down and with a random X
         rigidbody2d.AddForce(new Vector2(Random.Range(-initialX,initialX), -speed)); 
@@ -31,7 +33,6 @@ public class Ball : MonoBehaviour
         health = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Life>();
         health.SetMaxHealth(healthMax);
         healthCurrent = healthMax;
-        
     }
 
     // Update is called once per frame
@@ -50,7 +51,7 @@ public class Ball : MonoBehaviour
         {
             LoadScene("ActualGame");
         }
-        if (Input.GetKeyDown(KeyCode.A) == true)
+        if (Input.GetKeyDown(KeyCode.LeftControl) == true)
         {
             score += 43;
         }
