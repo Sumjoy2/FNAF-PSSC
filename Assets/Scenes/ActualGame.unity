@@ -7026,7 +7026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   angle: 0
-  deskButtons: {fileID: 0}
+  cutOffAngle: 140
+  deskButtons: {fileID: 1084180761}
 --- !u!1 &302007049
 GameObject:
   m_ObjectHideFlags: 0
