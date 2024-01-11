@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class NIghtNightTimer : MonoBehaviour
 {
-  
+
     [SerializeField] private int startingTime;
     [SerializeField] private float timeUntilHourChange;
     [SerializeField] private TMP_Text timeText;
@@ -15,7 +15,7 @@ public class NIghtNightTimer : MonoBehaviour
     [SerializeField] private TMP_Text txt_night;
 
     int day = 1;
-
+    [NonSerialized] public int nightish = 1;
 
     [NonSerialized] public int timeHours;
 
@@ -24,26 +24,26 @@ public class NIghtNightTimer : MonoBehaviour
 
     private void Start()
     {
-        night.SetActive(false);
         timeHours = startingTime;
         StartCoroutine(advanceHourOverTime());
 
     }
     private void Update()
     {
+        Debug.Log(nightish );
         timeText.text = timeHours + ":00 AM";
         if (timeHours == timeLimit)
         {
-            night.SetActive(true);
+            nightish++;
+            timeHours = 0;
         }
     }
     //used to click button to go to next day
     public void newDay()
     {
         day++;
-      
-       night.SetActive(false);
-       
+        txt_night.text = "Night " + nightish;
+        StartCoroutine(advanceHourOverTime());
     }
 
     private IEnumerator advanceHourOverTime()

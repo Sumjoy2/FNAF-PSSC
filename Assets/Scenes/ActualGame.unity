@@ -7026,6 +7026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   angle: 0
+  deskButtons: {fileID: 0}
 --- !u!1 &302007049
 GameObject:
   m_ObjectHideFlags: 0
@@ -7293,7 +7294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Night 2 '
+  m_text: 'Night 1 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -47216,10 +47217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fde1a741656a14a9bedf35cb133d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 10
+  level: 20
   levelMax: 20
-  night: 3
-  timer: 5
+  night: 5
+  timer: 1
   bounceBack: {fileID: 151221705}
   targetMove: {fileID: 301519146}
 --- !u!1 &1757090070
