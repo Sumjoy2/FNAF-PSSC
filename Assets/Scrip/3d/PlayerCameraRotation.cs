@@ -7,7 +7,8 @@ public class PlayerCameraRotation : MonoBehaviour
 {
     public float speed = 2.0f;
     public float angle;
-    public float cutOffAngle;
+    public float cutOffAngleLow;
+    public float cutOffAngleHigh;
     public Canvas deskButtons;
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,15 @@ public class PlayerCameraRotation : MonoBehaviour
     {
         angle += speed * Input.GetAxis("Mouse X");
         transform.eulerAngles = new Vector3(0, angle, 0);
-        if (transform.rotation.eulerAngles.y >= cutOffAngle)
+
+        float difference = Mathf.DeltaAngle (0, transform.eulerAngles.y);
+        if (difference > cutOffAngleLow && difference < cutOffAngleHigh)
         {
-            deskButtons.gameObject.SetActive(false);
+            deskButtons.gameObject.SetActive(true);
         }
         else
         {
-            deskButtons.gameObject.SetActive(true);
+            deskButtons.gameObject.SetActive(false);
         }
     }
 }
