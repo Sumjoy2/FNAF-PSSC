@@ -21,7 +21,6 @@ public class NIghtNightTimer : MonoBehaviour
 
     public GameObject night;
 
-    public Transform cramaa;
     public PlayerMovement3D tisBroketh;
 
     private void Start()
@@ -29,7 +28,6 @@ public class NIghtNightTimer : MonoBehaviour
         timeHours = startingTime;
         night.SetActive(false);
         StartCoroutine(advanceHourOverTime());
-        cramaa = Camera.main.transform;
     }
     private void Update()
     {
@@ -50,7 +48,6 @@ public class NIghtNightTimer : MonoBehaviour
         night.SetActive(false);
         StartCoroutine(advanceHourOverTime());
         //playerMovement.CameraDesk();
-        cramaa.position = new Vector3(38.5f, 3.55f, 138f);
         tisBroketh.CameraDesk();
 
     }
