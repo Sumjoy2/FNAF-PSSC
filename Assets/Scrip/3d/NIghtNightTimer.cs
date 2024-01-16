@@ -19,14 +19,17 @@ public class NIghtNightTimer : MonoBehaviour
 
     [NonSerialized] public int timeHours;
 
-
     public GameObject night;
+
+    public Transform cramaa;
+    public PlayerMovement3D tisBroketh;
 
     private void Start()
     {
         timeHours = startingTime;
+        night.SetActive(false);
         StartCoroutine(advanceHourOverTime());
-
+        cramaa = Camera.main.transform;
     }
     private void Update()
     {
@@ -36,6 +39,7 @@ public class NIghtNightTimer : MonoBehaviour
         {
             nightish++;
             timeHours = 0;
+            night.SetActive(true);
         }
     }
     //used to click button to go to next day
@@ -43,7 +47,12 @@ public class NIghtNightTimer : MonoBehaviour
     {
         day++;
         txt_night.text = "Night " + nightish;
+        night.SetActive(false);
         StartCoroutine(advanceHourOverTime());
+        //playerMovement.CameraDesk();
+        cramaa.position = new Vector3(38.5f, 3.55f, 138f);
+        tisBroketh.CameraDesk();
+
     }
 
     private IEnumerator advanceHourOverTime()
