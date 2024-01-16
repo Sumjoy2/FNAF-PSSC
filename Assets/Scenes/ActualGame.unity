@@ -345,8 +345,7 @@ MonoBehaviour:
   timeLimit: 6
   txt_night: {fileID: 303013601}
   night: {fileID: 303013599}
-  cramaa: {fileID: 0}
-  tisBroketh: {fileID: 0}
+  tisBroketh: {fileID: 530702218}
 --- !u!4 &34253912
 Transform:
   m_ObjectHideFlags: 0
