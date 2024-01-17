@@ -5,23 +5,22 @@ using UnityEngine;
 
 public class PlayerCameraRotation : MonoBehaviour
 {
+    //For Camera Follow Mouse
     public float speed = 2.0f;
     public float angle;
+    //To make the UI disapear at certain rotation
     public float cutOffAngleLow;
     public float cutOffAngleHigh;
     public Canvas deskButtons;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
+        //Rotates camera's y rotation with mouse
         angle += speed * Input.GetAxis("Mouse X");
         transform.eulerAngles = new Vector3(0, angle, 0);
 
+        //does fancy to make the UI disapear 
         float difference = Mathf.DeltaAngle (0, transform.eulerAngles.y);
         if (difference > cutOffAngleLow && difference < cutOffAngleHigh)
         {

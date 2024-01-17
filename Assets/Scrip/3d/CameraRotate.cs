@@ -16,6 +16,7 @@ public class CameraRotate : MonoBehaviour
     {
         A = transform.eulerAngles + new Vector3(0, currentRotation, 0);
         B = transform.eulerAngles + new Vector3(0, -currentRotation, 0);
+        locals[0] = GameObject.Find("StartLocation");
         locals = GameObject.FindGameObjectsWithTag("CamearLocals");
     }
 
