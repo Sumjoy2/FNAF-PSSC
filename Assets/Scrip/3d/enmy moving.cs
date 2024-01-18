@@ -16,7 +16,8 @@ public class enmymoving : MonoBehaviour
     [Header("Transforms")]
     public Transform bounceBack;
     private NavMeshAgent navMeshAgent;
-    public Transform targetMove;
+    public GameObject[] targetMove;
+    private int moveCurrent;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,17 +25,22 @@ public class enmymoving : MonoBehaviour
         //gets nav mesh and starts the first roll
         navMeshAgent = GetComponent<NavMeshAgent>();
         StartCoroutine(Roll(timer - night));
+        moveCurrent = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        navMeshAgent.destination = targetMove.position;
+        navMeshAgent.destination = targetMove[moveCurrent].transform.position;
         //moves if rand is less than or equal to level
         if (rand <= level)
         {
             StartCoroutine(MoveForward());
             rand = 21;
+        }
+        if (Vector3.Distance(transform.position ,targetMove[moveCurrent].transform.position) < 1.0) 
+        {
+            moveCurrent++;
         }
     }
 
@@ -44,6 +50,7 @@ public class enmymoving : MonoBehaviour
         if (collision.gameObject.tag == "Door")
         {
             transform.position = bounceBack.position;
+            moveCurrent = 0;
         }
     }
 
@@ -54,7 +61,7 @@ public class enmymoving : MonoBehaviour
     //sets destination back to target move, moves forward for 3 seconds then rolls a new number
     IEnumerator MoveForward()
     {
-        navMeshAgent.destination = targetMove.position;
+        navMeshAgent.destination = targetMove[moveCurrent].transform.position;
         navMeshAgent.isStopped = false;
         yield return new WaitForSeconds(3);
         StartCoroutine(Roll(timer - night));
