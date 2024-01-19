@@ -15,8 +15,8 @@ public class PlayerMovement3D : MonoBehaviour
 
     public void LeftDoor()
     {
-        mainCamera.transform.position = new Vector3(-7, 3, 144);
-        mainCamera.transform.rotation = Quaternion.Euler(0, 12.28f, 17.11f);
+        mainCamera.transform.position = new Vector3(-3, 3, 134);
+        mainCamera.transform.rotation = Quaternion.Euler(0, -50f, 0);
     }
 
     public void RightDoor()
