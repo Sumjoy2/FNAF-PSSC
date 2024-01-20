@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LightFlicker : MonoBehaviour
@@ -11,11 +12,13 @@ public class LightFlicker : MonoBehaviour
     private float time;
     private float startingIntensity;
     private Light lights;
+    private Material material;
 
     // Start is called before the first frame update
     void Start()
     {
         lights = GetComponent<Light>();
+        material = GetComponent<Material>();
         startingIntensity = lights.intensity;
     }
 
@@ -24,5 +27,6 @@ public class LightFlicker : MonoBehaviour
     {
         time += Time.deltaTime * (1 - Random.Range(-speedRandomness, speedRandomness)) * Mathf.PI;
         lights.intensity = startingIntensity + Mathf.Sin(time * flickerspersecond) * flickerspersecond;
+        material.SetColor("_EmissiveColor", Color.white * (startingIntensity + Mathf.Sin(time * flickerspersecond)) * flickerspersecond);
     }
 }
