@@ -42,6 +42,11 @@ public class enmymoving : MonoBehaviour
         {
             moveCurrent++;
         }
+        int timey_wimey = NIghtNightTimer.timeHours;
+        if (timey_wimey == 0)
+        {
+            transform.position = bounceBack.position;
+        }
     }
 
     //checks if hits door then throws back to bounce back position

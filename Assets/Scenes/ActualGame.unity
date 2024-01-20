@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTime: 0
-  timeUntilHourChange: 1
+  timeUntilHourChange: 30
   timeText: {fileID: 1002710848}
   timeLimit: 6
   txt_night: {fileID: 303013601}
@@ -26541,7 +26541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &965014176
 Transform:
   m_ObjectHideFlags: 0
@@ -51899,8 +51899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 20
   levelMax: 20
-  night: 1
-  timer: 5
+  night: 6
+  timer: 1
   bounceBack: {fileID: 151221705}
   targetMove:
   - {fileID: 2094589607}
