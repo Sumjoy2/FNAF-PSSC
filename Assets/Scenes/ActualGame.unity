@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -399,7 +399,7 @@ MonoBehaviour:
   timeLimit: 6
   txt_night: {fileID: 303013601}
   night: {fileID: 1934162962}
-  tisBroketh: {fileID: 0}
+  tisBroketh: {fileID: 301519148}
 --- !u!4 &34253912
 Transform:
   m_ObjectHideFlags: 0
@@ -13530,6 +13530,7 @@ MonoBehaviour:
   flickerInrensity: 0.2
   flickerspersecond: 3
   speedRandomness: 1
+  material: {fileID: 0}
 --- !u!1 &621105444
 GameObject:
   m_ObjectHideFlags: 0
@@ -46663,7 +46664,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
