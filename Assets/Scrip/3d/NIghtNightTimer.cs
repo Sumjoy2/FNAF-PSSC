@@ -49,7 +49,6 @@ public class NIghtNightTimer : MonoBehaviour
         StartCoroutine(advanceHourOverTime());
         //playerMovement.CameraDesk();
         tisBroketh.CameraDesk();
-
     }
 
     private IEnumerator advanceHourOverTime()

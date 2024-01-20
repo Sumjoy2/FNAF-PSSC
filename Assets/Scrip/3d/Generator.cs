@@ -15,7 +15,7 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nightTimer = FindObjectOfType<NIghtNightTimer>();
+        nightTimer = GameObject.Find("Wibbly wobbly, timey wimey").GetComponent<NIghtNightTimer>();
 
         generatorAmount = generatorMax;
         genAmountSlider.SetMaxHealth(generatorMax);
@@ -45,8 +45,7 @@ public class Generator : MonoBehaviour
             cameras.SetActive(false);
             generatorAmount = 0;
         }
-        int timey_wimey = nightTimer.timeHours;
-        if (timey_wimey == 0)
+        if (nightTimer.timeHours == 0)
         {
             generatorAmount = generatorMax;
         }

@@ -19,11 +19,14 @@ public class enmymoving : MonoBehaviour
     public GameObject[] targetMove;
     private int moveCurrent;
 
+    private NIghtNightTimer nightTimer;
+
     // Start is called before the first frame update
     void Awake()
     {
         //gets nav mesh and starts the first roll
         navMeshAgent = GetComponent<NavMeshAgent>();
+        nightTimer = GameObject.Find("Wibbly wobbly, timey wimey").GetComponent<NIghtNightTimer>();
         StartCoroutine(Roll(timer - night));
         moveCurrent = 0;
     }
@@ -42,11 +45,11 @@ public class enmymoving : MonoBehaviour
         {
             moveCurrent++;
         }
-       // int timey_wimey = NIghtNightTimer.timeHours;
-       // if (timey_wimey == 0)
-       // {
-       //     transform.position = bounceBack.position;
-      //  }
+       if (nightTimer.timeHours == 0)
+        {
+            transform.position = bounceBack.transform.position;
+            moveCurrent = 0;
+        }
     }
 
     //checks if hits door then throws back to bounce back position
