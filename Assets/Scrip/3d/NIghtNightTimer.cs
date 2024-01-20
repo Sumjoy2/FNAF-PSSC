@@ -17,7 +17,7 @@ public class NIghtNightTimer : MonoBehaviour
     int day = 1;
     [NonSerialized] public int nightish = 1;
 
-    [NonSerialized] public int timeHours;
+    [NonSerialized] public static int timeHours;
 
     public GameObject night;
 

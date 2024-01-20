@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTime: 0
-  timeUntilHourChange: 90
+  timeUntilHourChange: 1
   timeText: {fileID: 1002710848}
   timeLimit: 6
   txt_night: {fileID: 303013601}
@@ -34999,7 +34999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7f9ef70e018064784472bac1b79ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatorMax: 6000
+  generatorMax: 1000
   refueling: 0
   cameras: {fileID: 164785686}
   genAmountSlider: {fileID: 961333262}
