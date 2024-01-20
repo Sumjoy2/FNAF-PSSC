@@ -44,7 +44,7 @@ public class Generator : MonoBehaviour
     //adds 5 per whatever to generator amount
     public void WindUp()
     {
-        generatorAmount += 5;
+        generatorAmount += 25;
     }
     //makes holding the button work
     public void isRefuling()
