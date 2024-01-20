@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LightFlicker : MonoBehaviour
@@ -16,9 +15,8 @@ public class LightFlicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startingIntensity = lights.intensity;
-        if (lights == null) return;
         lights = GetComponent<Light>();
+        startingIntensity = lights.intensity;   
     }
 
     // Update is called once per frame

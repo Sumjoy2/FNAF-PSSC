@@ -5,11 +5,10 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     private int generatorAmount;
-    public int generatorMax = 6000;
+    public int generatorMax = 1000;
     public bool refueling = false;
     public GameObject cameras;
     public Life genAmountSlider;
-
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,6 @@ public class Generator : MonoBehaviour
         generatorAmount = generatorMax;
         genAmountSlider.SetMaxHealth(generatorMax);
         genAmountSlider.SetHealth(generatorAmount);
-
     }
 
     private void FixedUpdate()
@@ -42,18 +40,13 @@ public class Generator : MonoBehaviour
             cameras.SetActive(false);
             generatorAmount = 0;
         }
-        int timey_wimey = NIghtNightTimer.timeHours;
-       // Debug.Log(timey_wimey);
-        if(timey_wimey == 0)
-        {
-            generatorAmount = generatorMax;
-        }
     }
     //adds 5 per whatever to generator amount
     public void WindUp()
     {
         generatorAmount += 25;
     }
+
     //makes holding the button work
     public void isRefuling()
     {

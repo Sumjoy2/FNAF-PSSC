@@ -30,12 +30,28 @@ public class CameraRotate : MonoBehaviour
     public void nextCamera()
     {
         transform.position = locals[arrayCurrentLocal].transform.position;
-        arrayCurrentLocal++;
+        if (arrayCurrentLocal == locals.Length)
+        {
+            arrayCurrentLocal = 0;
+        }
+        else
+        {
+            arrayCurrentLocal++;
+        }
+        
     }
 
     public void prevCamera()
     {
         transform.position = locals[arrayCurrentLocal].transform.position;
-        arrayCurrentLocal--;
+        if (arrayCurrentLocal == 0)
+        {
+            arrayCurrentLocal = locals.Length;
+        }
+        else
+        {
+            arrayCurrentLocal--;
+        }
+        
     }
 }

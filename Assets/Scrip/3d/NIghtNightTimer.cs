@@ -17,7 +17,7 @@ public class NIghtNightTimer : MonoBehaviour
     int day = 1;
     [NonSerialized] public int nightish = 1;
 
-    [NonSerialized] public static int timeHours;
+    [NonSerialized] public int timeHours;
 
     public GameObject night;
 
@@ -28,6 +28,7 @@ public class NIghtNightTimer : MonoBehaviour
         timeHours = startingTime;
         night.SetActive(false);
         StartCoroutine(advanceHourOverTime());
+        tisBroketh = Camera.main.GetComponent<PlayerMovement3D>();
     }
     private void Update()
     {

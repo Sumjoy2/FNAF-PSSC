@@ -10,18 +10,18 @@ public class Materls : MonoBehaviour
 
     private float time;
     private float startingIntensity;
-    private Material material;
+    public GameObject material;
 
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<Material>();
+        material = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime * (1 - Random.Range(-speedRandomness, speedRandomness)) * Mathf.PI;
-        material.SetColor("_EmissiveColor", Color.white * (startingIntensity + Mathf.Sin(time * flickerspersecond)) * flickerspersecond);
+        material.GetComponent<Renderer>().material.SetColor("_EmissiveColor", Color.white * (startingIntensity + Mathf.Sin(time * flickerspersecond)) * flickerspersecond);
     }
 }
