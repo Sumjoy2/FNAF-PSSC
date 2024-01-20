@@ -25,33 +25,33 @@ public class CameraRotate : MonoBehaviour
     {
         float timeering = Mathf.PingPong(Time.time * speed, 1);
         transform.eulerAngles = Vector3.Lerp(A, B, timeering);
+        if (arrayCurrentLocal > locals.Length)
+        {
+            arrayCurrentLocal = 0;
+        }
+        else if (arrayCurrentLocal < 0)
+        {
+            arrayCurrentLocal = locals.Length;
+        }
     }
 
     public void nextCamera()
     {
-        transform.position = locals[arrayCurrentLocal].transform.position;
-        if (arrayCurrentLocal == locals.Length)
+        arrayCurrentLocal++;
+        if (arrayCurrentLocal > locals.Length)
         {
             arrayCurrentLocal = 0;
         }
-        else
-        {
-            arrayCurrentLocal++;
-        }
-        
+        transform.position = locals[arrayCurrentLocal].transform.position;
     }
 
     public void prevCamera()
     {
-        transform.position = locals[arrayCurrentLocal].transform.position;
-        if (arrayCurrentLocal == 0)
+        arrayCurrentLocal--;
+        if (arrayCurrentLocal < 0)
         {
             arrayCurrentLocal = locals.Length;
         }
-        else
-        {
-            arrayCurrentLocal--;
-        }
-        
+        transform.position = locals[arrayCurrentLocal].transform.position;
     }
 }
