@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using Unity.VisualScripting;
 
 public class Ball : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class Ball : MonoBehaviour
     public float speed;
     public float initialX;
 
-    // Awake is called on object initialization
+    // Awake is called on object initializationqerqerdwqresdqwaseaersdawrasd
     void Awake()
     {
         pssc = GameObject.Find("PSSC");
