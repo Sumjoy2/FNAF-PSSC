@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -397,7 +397,7 @@ MonoBehaviour:
   timeLimit: 6
   txt_night: {fileID: 303013601}
   night: {fileID: 1934162962}
-  tisBroketh: {fileID: 530702218}
+  tisBroketh: {fileID: 0}
 --- !u!4 &34253912
 Transform:
   m_ObjectHideFlags: 0
@@ -1511,6 +1511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atGenerator: 0
   isHiding: 0
+  atDesk: 0
 --- !u!114 &70438326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,7 +1580,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 70438325}
+      - m_Target: {fileID: 301519148}
         m_TargetAssemblyTypeName: PlayerMovement3D, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -6541,6 +6542,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e63866f34312ecf4cbc48b673dc533b0, type: 3}
   m_PrefabInstance: {fileID: 238821151}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &240168934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4909321149649787281, guid: 5efbdff695d22544890988ce1a13dd25, type: 3}
+  m_PrefabInstance: {fileID: 1188691542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &241466489
 GameObject:
   m_ObjectHideFlags: 0
@@ -7266,6 +7272,7 @@ GameObject:
   - component: {fileID: 301519145}
   - component: {fileID: 301519144}
   - component: {fileID: 301519147}
+  - component: {fileID: 301519148}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7364,6 +7371,22 @@ MonoBehaviour:
   cutOffAngleLow: -140
   cutOffAngleHigh: 140
   deskButtons: {fileID: 1084180761}
+  move: {fileID: 0}
+--- !u!114 &301519148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301519143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16cefd4f1e789c43a03d92c58c18740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atGenerator: 0
+  isHiding: 0
+  atDesk: 1
 --- !u!1 &302007049
 GameObject:
   m_ObjectHideFlags: 0
@@ -10341,28 +10364,13 @@ GameObject:
   - component: {fileID: 530702221}
   - component: {fileID: 530702220}
   - component: {fileID: 530702219}
-  - component: {fileID: 530702218}
   m_Layer: 5
   m_Name: Back
-  m_TagString: Untagged
+  m_TagString: BackButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &530702218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530702217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b16cefd4f1e789c43a03d92c58c18740, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atGenerator: 0
-  isHiding: 0
 --- !u!114 &530702219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10467,8 +10475,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 530702218}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 301519148}
+        m_TargetAssemblyTypeName: PlayerMovement3D, Assembly-CSharp
         m_MethodName: CameraDesk
         m_Mode: 1
         m_Arguments:
@@ -11039,6 +11047,38 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!1 &603468568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603468569}
+  m_Layer: 0
+  m_Name: Plants
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603468569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603468568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1204.5, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 240168934}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605755561
 GameObject:
   m_ObjectHideFlags: 0
@@ -33722,15 +33762,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 603468569}
     m_Modifications:
     - target: {fileID: 4909321149649787281, guid: 5efbdff695d22544890988ce1a13dd25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.3097
+      value: -1148.1903
       objectReference: {fileID: 0}
     - target: {fileID: 4909321149649787281, guid: 5efbdff695d22544890988ce1a13dd25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2537055
+      value: -536.7463
       objectReference: {fileID: 0}
     - target: {fileID: 4909321149649787281, guid: 5efbdff695d22544890988ce1a13dd25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41571,6 +41611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atGenerator: 0
   isHiding: 0
+  atDesk: 0
 --- !u!114 &1470927220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41651,8 +41692,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1470927219}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 301519148}
+        m_TargetAssemblyTypeName: PlayerMovement3D, Assembly-CSharp
         m_MethodName: LeftDoor
         m_Mode: 1
         m_Arguments:
@@ -47687,7 +47728,7 @@ Transform:
   m_GameObject: {fileID: 1665027506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.6, y: 1.11, z: 140.22}
+  m_LocalPosition: {x: -14.6, y: 1.11, z: 70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49702,6 +49743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atGenerator: 0
   isHiding: 0
+  atDesk: 0
 --- !u!114 &1833972931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49782,8 +49824,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1833972930}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 301519148}
+        m_TargetAssemblyTypeName: PlayerMovement3D, Assembly-CSharp
         m_MethodName: Generator
         m_Mode: 1
         m_Arguments:
@@ -52266,6 +52308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atGenerator: 0
   isHiding: 0
+  atDesk: 0
 --- !u!114 &1979177601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52346,8 +52389,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1979177600}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 301519148}
+        m_TargetAssemblyTypeName: PlayerMovement3D, Assembly-CSharp
         m_MethodName: RightDoor
         m_Mode: 1
         m_Arguments:
@@ -53748,8 +53791,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2098903216}
         m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Exit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -53925,4 +53968,4 @@ SceneRoots:
   - {fileID: 2031983345}
   - {fileID: 34253912}
   - {fileID: 670864152}
-  - {fileID: 1188691542}
+  - {fileID: 603468569}

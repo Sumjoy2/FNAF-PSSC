@@ -31,7 +31,6 @@ public class NIghtNightTimer : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(nightish );
         timeText.text = timeHours + ":00 AM";
         if (timeHours == timeLimit)
         {

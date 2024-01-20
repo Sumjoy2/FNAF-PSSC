@@ -5,22 +5,27 @@ using UnityEngine;
 public class PlayerMovement3D : MonoBehaviour
 {
     Camera mainCamera;
-    public bool atGenerator = false;
-    public bool isHiding = false;
+
+    [HideInInspector] public bool atGenerator = false;
+    [HideInInspector] public bool isHiding = false;
+    [HideInInspector] public bool atDesk = true;
 
     private void Start()
     {
         mainCamera = Camera.main;
+        atDesk = true;
     }
 
     public void LeftDoor()
     {
+        atDesk = false;
         mainCamera.transform.position = new Vector3(-3, 3, 134);
         mainCamera.transform.rotation = Quaternion.Euler(0, -50f, 0);
     }
 
     public void RightDoor()
     {
+        atDesk = false;
         mainCamera.transform.position = new Vector3(51, 1.55f, 180);
         mainCamera.transform.rotation = Quaternion.Euler(0, 35, -7);
     }
@@ -29,12 +34,14 @@ public class PlayerMovement3D : MonoBehaviour
     {
         atGenerator = false;
         isHiding = false;
+        atDesk = true;
         mainCamera.transform.position = new Vector3(38.5f, 3.55f, 138);
         mainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public void Generator()
     {
+        atDesk = false;
         atGenerator = true;
         mainCamera.transform.position = new Vector3(30, 1.55f, 205);
         mainCamera.transform.rotation = Quaternion.Euler(6, 0, 0);

@@ -12,6 +12,7 @@ TagManager:
   - Door
   - NewBrick
   - CamearLocals
+  - BackButton
   layers:
   - Default
   - TransparentFX
