@@ -35,8 +35,8 @@ public class PlayerMovement3D : MonoBehaviour
         atGenerator = false;
         isHiding = false;
         atDesk = true;
-        mainCamera.transform.position = new Vector3(38.5f, 3.55f, 138);
-        mainCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+        mainCamera.transform.position = new Vector3(38.5f, 4.57f, 138);
+        mainCamera.transform.rotation = Quaternion.Euler(3.5f, 0, 0);
     }
 
     public void Generator()
